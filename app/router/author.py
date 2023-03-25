@@ -3,7 +3,7 @@ from typing import List, Any
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from app.schemas import Author, AuthorCreate
+from app.schemas import Author, AuthorCreate, AuthorUpdate
 from app.models import AuthorModel, BookModel
 from app.database.connection import get_db
 
@@ -46,7 +46,7 @@ def create_author(
 @author_router.put("/{author_id}", response_model=Author)
 def update_author(
         author_id: int,
-        author_in: AuthorCreate,
+        author_in: AuthorUpdate,
         db: Session = Depends(get_db),
 ):
     author = db.query(AuthorModel).filter(AuthorModel.id == author_id).first()

@@ -4,12 +4,12 @@ from pydantic import BaseModel
 
 # Shared properties
 class BookBase(BaseModel):
-    name: Optional[str] = None
+    title: Optional[str] = None
 
 
 # Properties to receive via API
 class BookCreate(BookBase):
-    pass
+    author_id: int
 
 
 class BookUpdate(BookBase):
@@ -19,7 +19,7 @@ class BookUpdate(BookBase):
 # Properties shared by models stored in DB
 class BookInDBBase(BookBase):
     id: int
-    name: str
+    title: str
 
     class Config:
         orm_mode = True
