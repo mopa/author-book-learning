@@ -21,9 +21,9 @@ app = create_application()
 
 @app.on_event("startup")
 async def startup_event():
-    log.info("Starting up...")
+    log.info("***Starting up...")
 
 
 @app.on_event("shutdown")
 async def shutdown_event():
-    log.info("Shutting down...")
+    log.info("***Shutting down...")

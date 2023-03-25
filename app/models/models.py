@@ -16,7 +16,7 @@ class AuthorModel(Base):
 class BookModel(Base):
     __tablename__ = 'books'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, index=True)
     title = Column(String, nullable=False)
     author_id = Column(Integer, ForeignKey('authors.id'))
 
