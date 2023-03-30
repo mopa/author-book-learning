@@ -28,3 +28,6 @@ class BookInDBBase(BookBase):
 # Properties to return to client
 class Book(BookInDBBase):
     pass
+
+class BookAll(BookInDBBase):
+    author_id: int

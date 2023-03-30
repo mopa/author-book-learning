@@ -15,7 +15,7 @@ class IBookRepository(ABC):
         pass
 
     @abstractmethod
-    def update(self, book):
+    def update(self, book, id):
         pass
 
     @abstractmethod
